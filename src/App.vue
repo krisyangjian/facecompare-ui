@@ -138,4 +138,32 @@
 	.demo {
     	margin: 20px 0;
 	}
+.hljs-keyword, .hljs-selector-tag, .hljs-title, .hljs-section, .hljs-built_in, .hljs-doctag, .hljs-type, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-strong {
+	color: #3182bd;
+}
+.page-component .content table {
+	border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    font-size: 14px;
+    margin-bottom: 45px;
+    line-height: 1.5em;	
+}
+.page-component .content table th:first-child, .page-component .content table td:first-child {
+	padding-left: 10px;
+}
+.page-component .content table th {
+	text-align: left;
+    white-space: nowrap;
+    color: #666;
+    font-weight: 400;	
+}
+.page-component .content table td {
+	color: #333333;
+}
+.page-component .content table td, .page-component .content table th {
+	border-bottom: 1px solid #d8d8d8;
+    padding: 15px;
+    max-width: 250px;	
+}
 </style>

@@ -23,7 +23,8 @@
         height: calc(100% - 40px);
         padding: 20px;
         background-color: #ffffff;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     /* .content { */
         /* border: 1px solid #c7c7ca; */

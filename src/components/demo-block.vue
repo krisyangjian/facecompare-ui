@@ -41,6 +41,17 @@
 
 .demo-block code {
     font-family: Menlo, Monaco, Consolas, Courier, monospace;
+    /* color: #5e6d82;
+    background-color: #e6effb;
+    margin: 0 4px;
+    display: inline-block;
+    padding: 1px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    height: 18px;
+    line-height: 18px; */
+}
+.demo-block .description code {
     color: #5e6d82;
     background-color: #e6effb;
     margin: 0 4px;
@@ -49,9 +60,8 @@
     font-size: 12px;
     border-radius: 3px;
     height: 18px;
-    line-height: 18px;
+    line-height: 18px;    
 }
-
 .demo-block  .demo-button {
     float: right;
 }
@@ -144,11 +154,17 @@
     opacity: 0;
     transform: translateX(10px);    
 }
-.demo-block .demo-block-control.is-fixed {
-    position: fixed;
+ .hljs {
+    display: block;
+    overflow-x: auto;
+    /* padding: 0.5em; */
+    /* background: #fff; */
+} 
+/* .demo-block .demo-block-control.is-fixed { */
+    /* position: fixed;
     bottom: 0;
-    width: 868px;   
-}
+    width: 868px;    */
+/* } */
       /* &.is-fixed {
         position: fixed;
         bottom: 0;
@@ -246,10 +262,10 @@
       },
 
       scrollHandler() {
-        const { top, bottom, left } = this.$refs.meta.getBoundingClientRect();
-        this.fixedControl = bottom > document.documentElement.clientHeight &&
-          top + 44 <= document.documentElement.clientHeight;
-        this.$refs.control.style.left = this.fixedControl ? `${ left }px` : '0';
+        // const { top, bottom, left } = this.$refs.meta.getBoundingClientRect();
+        // this.fixedControl = bottom > document.documentElement.clientHeight &&
+        //   top + 44 <= document.documentElement.clientHeight;
+        // this.$refs.control.style.left = this.fixedControl ? `${ left }px` : '0';
       },
 
       removeScrollHandler() {
@@ -301,11 +317,11 @@
           this.removeScrollHandler();
           return;
         }
-        setTimeout(() => {
-          this.scrollParent = document.querySelector('.page-component__scroll > .el-scrollbar__wrap');
-          this.scrollParent && this.scrollParent.addEventListener('scroll', this.scrollHandler);
-          this.scrollHandler();
-        }, 200);
+        // setTimeout(() => {
+        //   this.scrollParent = document.querySelector('.page-component__scroll > .el-scrollbar__wrap');
+        //   this.scrollParent && this.scrollParent.addEventListener('scroll', this.scrollHandler);
+        //   this.scrollHandler();
+        // }, 200);
       }
     },
 

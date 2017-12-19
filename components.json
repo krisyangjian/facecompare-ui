@@ -3,6 +3,11 @@
         "packagePath": "./button/index.js",
         "routePath": "/button",
         "title": "Button 按钮"
+    },
+    "table": {
+        "packagePath": "./table/index.js",
+        "routePath": "/table",
+        "title": "Table 表格"
     }
 }
   
