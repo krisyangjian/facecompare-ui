@@ -1,23 +1,38 @@
 <template>
 	<div class="menu-wrap">
         <ul class="menu-content">
-            <li><router-link to="/button">Button 按钮</router-link></li>
-            <li><router-link to="/table">Table 表格</router-link></li>
+            <li class="nav-item" v-for="navItem in comInfoList">
+             <router-link
+              :to="navItem.routePath">{{navItem.title}}</router-link>
+            </li>
         </ul>
 	</div>
 </template>
 
 <script>
-	export default {
-		data() {
-			return{
-			}
-		},
-		components: {
-		},
-		methods: {
+import comConfig from '../../../components.json';
+
+export default {
+	data() {
+		return{
+            comConfig
 		}
-	}	
+    },
+    computed: {
+        comInfoList: function() {
+            let list = [];
+	        Object.keys(comConfig).forEach((comName, index) => {
+                let comInfo = comConfig[comName];
+                list.push(comInfo);
+            });
+            return list;
+        }
+    },
+	components: {
+	},
+	methods: {
+	}
+}
 </script>
 
 <style>
@@ -43,7 +58,7 @@
     }
     .menu-content li a {
         color: #ffffff;
-        font-size: 14px;
+        font-size: 16px;
         display: block;
         width: 100%;
         height: 100%;

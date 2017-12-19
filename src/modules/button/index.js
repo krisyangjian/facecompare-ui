@@ -1,8 +1,8 @@
-import ISButton from './button';
+import IsButton from './button';
 
 /* istanbul ignore next */
-ISButton.install = function(Vue) {
-  Vue.component(ISButton.name, ISButton);
+IsButton.install = function(Vue) {
+  Vue.component(IsButton.name, IsButton);
 };
 
-export default ISButton;
+export default IsButton;
