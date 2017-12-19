@@ -8,6 +8,10 @@
         "packagePath": "./table/index.js",
         "routePath": "/table",
         "title": "Table 表格"
+    },
+    "test": {
+        "packagePath": "./test/index.js",
+        "routePath": "/test",
+        "title": "Test 测试组件"
     }
 }
-  

@@ -39,7 +39,7 @@ const registerRoute = (comConfig) => {
 }
 
 let route = registerRoute(comConfig);
-console.log(route)
+
 let router = new Router({
 	routes: route
 });
