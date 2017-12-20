@@ -1,14 +1,10 @@
 <template>
 	<div>
-        <div class="is-test">测试的自定义组件</div>
+        <div class="is-test">{{ $t("is.test.text") }}</div>
 	</div>
 </template>
 <script>
 	export default {
-        name: 'IsTest'
+        	name: 'IsTest'
 	};
 </script>
-<!--
-<style lang="scss">
-
-</style>-->

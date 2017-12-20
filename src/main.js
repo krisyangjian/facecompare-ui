@@ -3,15 +3,21 @@ import App from './App';
 import { router } from './utils/router.utils';
 import ElementUI from 'element-ui';
 import InsightUI from './index.js';
+import VueI18n from 'vue-i18n';
+import elZhElementUI from 'element-ui/lib/locale/lang/zh-CN';
+import elZhInsightUI from './locale/lang/zh-CN';
 
 import 'element-ui/lib/theme-chalk/index.css';
 import './theme-chalk/src/index.scss';
 
-import test from './modules/test/index.js';
-
 Vue.use(ElementUI);
 Vue.use(InsightUI);
-// Vue.use(InsightUI);
+Vue.use(VueI18n);
+
+//注册默认语言包
+Vue.locale('zh-cn', elZhInsightUI);
+//设置默认语言
+Vue.config.lang = 'zh-cn';
 
 new Vue({
 	el: '#app',

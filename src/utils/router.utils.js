@@ -19,12 +19,13 @@ const registerRoute = (comConfig) => {
 	let route = [];
 	Object.keys(comConfig).forEach((comName, index) => {
 		let comInfo = comConfig[comName];
-		//默认组件路由
-		// route.push({
-		// 	path: `/${ lang }/component`,
-		// 	component: load(lang, 'component'),
-		// 	children: []
-		// });
+		if(index === 0) {
+			//默认组件路由
+			route.push({
+				path: '/',
+				redirect: `/${comName}`
+			});
+		}
 		addRoute(comInfo, comName, index);
 	});
 
@@ -39,7 +40,6 @@ const registerRoute = (comConfig) => {
 }
 
 let route = registerRoute(comConfig);
-
 let router = new Router({
 	routes: route
 });
