@@ -14,10 +14,10 @@
 		<div class="locale-switch">
 			<el-dropdown :show-timeout=0 :hide-timeout=0 trigger="click" @command="changeLocale">
   				<span class="el-dropdown-link">
-    				语言选择<i class="el-icon-arrow-down el-icon--right"></i>
+    				语言选择 {{ lang }}<i class="el-icon-arrow-down el-icon--right"></i>
   				</span>
   				<el-dropdown-menu slot="dropdown">
-    				<el-dropdown-item command="zh-CN">zh-cn</el-dropdown-item>
+    				<el-dropdown-item command="zh-CN">zh-CN</el-dropdown-item>
     				<el-dropdown-item command="en">en</el-dropdown-item>
   				</el-dropdown-menu>
 			</el-dropdown>				
@@ -34,6 +34,11 @@
 		},
 		components: {
 		},
+		computed: {
+			lang: function() {
+				return Vue.config.lang || "zh-CN"
+			}
+		},
 		methods: {
 			changeTheme: function() {
 			},
@@ -41,8 +46,9 @@
 				let locale = command || "zh-CN";
 				// let localPackage = r => require.ensure([], () => r(require(`../../locale/lang/${locale}`)), 'locale');
 				require.ensure([], function(require) {
-					let localPackage = require(`../../locale/lang/${locale}`);
-					Vue.locale(locale, localPackage.default);
+					let localPackageIS = require(`../../locale/lang/${locale}`);
+					let localPackageEL = require(`element-ui/lib/locale/lang/${locale}`);
+					Vue.locale(locale, Object.assign({}, localPackageEL.default, localPackageIS.default));
 					Vue.config.lang = locale;
 				}, 'locale');
 			}
@@ -59,7 +65,7 @@
 	}
 	.theme-switch {
 		position: absolute;
-    	right: 120px;
+    	right: 180px;
 		top: 15px;
 		cursor: pointer;
 	}

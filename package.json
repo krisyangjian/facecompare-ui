@@ -6,9 +6,9 @@
   "main": "dist/insight-ui.common.js",
   "scripts": {
     "build:file": "node build/build-entry.js",
-    "build:theme": "node build/bin/gen-cssfile && gulp build --gulpfile packages/theme-chalk/gulpfile.js && cp-cli packages/theme-chalk/lib lib/theme-chalk",
+    "build:theme": "node build/gen-cssfile && gulp build --gulpfile src/theme-chalk/gulpfile.js && cp-cli src/theme-chalk/dist dist/theme-chalk",
     "dev": "npm run build:file && node build/dev-server.js",
-    "build": "npm run build:file && node build/build.js"
+    "build": "npm run build:file && node build/build.js && npm run build:theme"
   },
   "dependencies": {
     "element-ui": "^2.0.8",
@@ -24,12 +24,17 @@
     "babel-preset-env": "^1.6.1",
     "connect-history-api-fallback": "^1.5.0",
     "copy-webpack-plugin": "^4.3.0",
+    "cp-cli": "^1.1.0",
     "css-loader": "^0.28.7",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^3.1.0",
     "html-webpack-plugin": "^2.30.1",
     "http-proxy-middleware": "^0.17.4",
     "json-loader": "^0.5.7",

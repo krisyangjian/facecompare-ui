@@ -15,9 +15,9 @@ Vue.use(InsightUI);
 Vue.use(VueI18n);
 
 //注册默认语言包
-Vue.locale('zh-cn', elZhInsightUI);
+Vue.locale('zh-CN', Object.assign({}, elZhElementUI, elZhInsightUI));
 //设置默认语言
-Vue.config.lang = 'zh-cn';
+Vue.config.lang = 'zh-CN';
 
 new Vue({
 	el: '#app',
