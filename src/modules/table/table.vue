@@ -5,9 +5,9 @@
 </template>
 
 <script>
-	export default {
-		name: "IsTable"
-	};
+export default {
+  name: 'IsTable'
+}
 </script>
 <style>
 </style>

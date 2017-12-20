@@ -1,8 +1,7 @@
 export default {
-    is: {
-        test: {
-            text: 'component test'
-        }
+  is: {
+    test: {
+      text: 'component test'
     }
-  };
-  
+  }
+}

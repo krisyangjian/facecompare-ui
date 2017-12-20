@@ -8,22 +8,22 @@
 	</div>
 </template>
 <script>
-	import HeaderLayout from '@/components/layout/header';
-	import MenuLayout from '@/components/layout/menu';
-	import ContentLayout from '@/components/layout/content';
+	import HeaderLayout from '@/components/layout/header'
+	import MenuLayout from '@/components/layout/menu'
+	import ContentLayout from '@/components/layout/content'
 	
-	import Vue from 'vue';
-	import demoBlock from '@/components/demo-block';
+	import Vue from 'vue'
+	import demoBlock from '@/components/demo-block'
 
-	Vue.component('demo-block', demoBlock);
+	Vue.component('demo-block', demoBlock)
 
 	export default {
-		name: 'app',
-		components: {
-			HeaderLayout,
-			MenuLayout,
-			ContentLayout
-		}
+	  name: 'app',
+	  components: {
+	    HeaderLayout,
+	    MenuLayout,
+	    ContentLayout
+	  }
 	}
 </script>
 <style>

@@ -7,15 +7,15 @@
 </template>
 <script>
 	export default {
-		data() {
-			return{
-			}
-		},
-		components: {
-		},
-		methods: {
-		}
-	}		
+	  data () {
+		return {
+	    }
+	  },
+	  components: {
+	  },
+	  methods: {
+	  }
+	}
 </script>
 
 <style>
@@ -26,7 +26,4 @@
         overflow-x: hidden;
         overflow-y: auto;
     }
-    /* .content { */
-        /* border: 1px solid #c7c7ca; */
-    /* } */
 </style>
