@@ -1,11 +1,11 @@
 'use strict';
 
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var cssmin = require('gulp-cssmin');
+let gulp = require('gulp');
+let sass = require('gulp-sass');
+let autoprefixer = require('gulp-autoprefixer');
+let cssmin = require('gulp-cssmin');
 
-gulp.task('compile', function() {
+gulp.task('compile', function () {
   return gulp.src('./src/*.scss')
     .pipe(sass.sync())
     .pipe(autoprefixer({

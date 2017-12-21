@@ -5,36 +5,37 @@ import comConfig from '../../components.json'
 Vue.use(Router)
 
 const LOAD_DOCS_MAP = (name, path) => {
-  return r => require.ensure([], () =>
+  return r => require.ensure(
+[], () =>
     r(require(`../modules/${name}${path}.demo.md`)),
-    'zh-CN')
+    'zh-CN'
+)
 }
 
 const loadDocs = function (name, path) {
-  return LOAD_DOCS_MAP (name, path)
+  return LOAD_DOCS_MAP(name, path)
 }
 
-const registerRoute = (comConfig) => {
+const registerRoute = (config) => {
   let route = []
-  Object.keys(comConfig).forEach((comName, index) => {
-    let comInfo = comConfig[comName]
-	if(index === 0) {
-	  // 默认组件路由
-		route.push({
-			path: '/',
-			redirect: `/${comName}`
-		});
-	}
-	addRoute(comInfo, comName, index)
-	})
-
-	function addRoute(page, name, index){
+	function addRoute(page, name) {
 		const component = loadDocs(name, page.routePath)
 		route.push({
 			path: `/${ name }`,
 			component
 		})
 	}
+  Object.keys(config).forEach((comName, index) => {
+    let comInfo = config[comName]
+		if (index === 0) {
+		  // 默认组件路由
+			route.push({
+				path: '/',
+				redirect: `/${comName}`
+			});
+		}
+		addRoute(comInfo, comName, index)
+	})
 	return route
 }
 
