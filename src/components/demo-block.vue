@@ -298,11 +298,11 @@ export default {
   },
   watch: {
     isExpanded (val) {
-      this.codeArea.style.height = val ? `$ { this.codeAreaHeight + 1 } px` : '0'
+      this.codeArea.style.height = val ? `${ this.codeAreaHeight + 1 }px` : '0'
       if (!val) {
         this.fixedControl = false
         this.$refs.control.style.left = '0'
-        this.removeScrollHandler()
+        // this.removeScrollHandler()
       }
     }
   },

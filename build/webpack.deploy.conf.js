@@ -14,9 +14,17 @@ const env = config.deploy.env
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
       rules: utils.styleLoaders({
-          extract: false,
+          extract: true,
           usePostCSS: true
       })
+  },
+  output: {
+    path: config.deploy.assetsRoot,
+    filename: '[name].[chunkhash:7].js',
+    chunkFilename: '[id].[chunkhash:7].js'
+    // publicPath: process.env.NODE_ENV === 'production'
+    //   ? config.build.assetsPublicPath
+    //   : config.dev.assetsPublicPath
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -35,6 +43,14 @@ const webpackConfig = merge(baseWebpackConfig, {
         // },
         // // necessary to consistently work with multiple chunks via CommonsChunkPlugin
         // chunksSortMode: 'dependency'
+    }),
+    new ExtractTextPlugin({
+        filename: '[name].[chunkhash:7].css',
+        // Setting the following option to `false` will not extract CSS from codesplit chunks.
+        // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
+        // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+        // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
+        allChunks: true,
     }),
     new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',

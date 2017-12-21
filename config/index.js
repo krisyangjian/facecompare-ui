@@ -7,7 +7,8 @@ const path = require('path')
 
 module.exports = {
   deploy: {
-    env: require('./deploy.env')
+    env: require('./deploy.env'),
+    assetsRoot: path.resolve(__dirname, '../example')
   },
   build: {
     env: require('./prod.env'),
