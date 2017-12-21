@@ -19,7 +19,7 @@ exports.cssLoaders = function (options) {
       minimize: process.env.NODE_ENV === 'production',
       sourceMap: options.sourceMap,
       attrs: {
-        ss: "sss"
+        id: "sss"
       }
     }
   }
