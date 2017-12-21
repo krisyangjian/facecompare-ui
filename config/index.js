@@ -6,6 +6,9 @@
 const path = require('path')
 
 module.exports = {
+  deploy: {
+    env: require('./deploy.env')
+  },
   build: {
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),

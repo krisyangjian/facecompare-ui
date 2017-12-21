@@ -6,8 +6,8 @@
     				主题选择<i class="el-icon-arrow-down el-icon--right"></i>
   				</span>
   				<el-dropdown-menu slot="dropdown">
-    				<el-dropdown-item>chalk</el-dropdown-item>
-    				<el-dropdown-item>other</el-dropdown-item>
+    				<el-dropdown-item command="chalk">chalk</el-dropdown-item>
+    				<el-dropdown-item command="other">other</el-dropdown-item>
   				</el-dropdown-menu>
 			</el-dropdown>			
 		</div>
@@ -40,7 +40,8 @@
 		  }
 	  },
 	  methods: {
-		changeTheme: function () {
+		changeTheme: function (command) {
+			let theme = command;
 		},
 		changeLocale: function (command) {
 		  let locale = command || 'zh-CN'
