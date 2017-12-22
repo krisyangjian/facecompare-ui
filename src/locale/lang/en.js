@@ -4,4 +4,4 @@ export default {
       text: 'component test'
     }
   }
-}
+};

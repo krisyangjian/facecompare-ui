@@ -8,14 +8,14 @@
 <script>
 	export default {
 	  data () {
-		return {
-	    }
+	    return {
+	    };
 	  },
 	  components: {
 	  },
 	  methods: {
 	  }
-	}
+	};
 </script>
 
 <style>

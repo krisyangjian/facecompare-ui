@@ -25,35 +25,40 @@
 	</div>
 </template>
 <script>
-	import Vue from 'vue'
+	import Vue from 'vue';
 
 	export default {
-	  data () {
-	      return{
-		  }
+		data () {
+	    return {
+		};
 	  },
 	  components: {
 	  },
 	  computed: {
-		  lang: function () {
-		    return Vue.config.lang || 'zh-CN'
+		  lang() {
+		    return Vue.config.lang || 'zh-CN';
 		  }
 	  },
 	  methods: {
-		changeTheme: function (command) {
-			let theme = command;
-		},
-		changeLocale: function (command) {
-		  let locale = command || 'zh-CN'
-          require.ensure([], function (require) {
-            let localPackageIS = require(`../../locale/lang/${locale}`)
-	        let localPackageEL = require(`element-ui/lib/locale/lang/${locale}`)
-	        Vue.locale(locale, Object.assign({}, localPackageEL.default, localPackageIS.default))
-	        Vue.config.lang = locale
-		  }, 'locale')
+		// changeTheme(command) {
+		// },
+		changeLocale(command) {
+		  const locale = command || 'zh-CN';
+      //     require.ensure([], function (require) {
+      //       let localPackageIS = require(`../../locale/lang/${locale}`)
+	    //     let localPackageEL = require(`element-ui/lib/locale/lang/${locale}`)
+	    //     Vue.locale(locale, Object.assign({}, localPackageEL.default, localPackageIS.default));
+	    //     Vue.config.lang = locale;
+			// }, 'locale');
+					require.ensure([], (require) => {
+						const localPackageIS = require(`../../locale/lang/${locale}`);
+						const localPackageEL = require(`element-ui/lib/locale/lang/${locale}`);
+						Vue.locale(locale, Object.assign({}, localPackageEL.default, localPackageIS.default));
+						Vue.config.lang = locale;
+					}, 'locale');
 	    }
 	  }
-	}
+	};
 </script>
 
 <style>

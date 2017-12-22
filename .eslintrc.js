@@ -10,24 +10,35 @@ module.exports = {
     browser: true,
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-  extends: 'airbnb-base/legacy',
+  extends: 'airbnb-base',
   // required to lint *.vue files
   plugins: [
     'html'
   ],
   // add your custom rules here
   rules: {
+    'comma-dangle': 'off',
+    'space-before-function-paren': 'off',
+    'max-len': 'off',
+    'no-unused-expressions': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'indent': 'off',
+    'import/first': 'off',
     // allow async-await
-    'generator-star-spacing': 'off',
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'semi': 'off',
+    // 'generator-star-spacing': 'off',
+    // // allow debugger during development
+    // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    // 'semi': 'off',
     'no-tabs':'off',
     'no-new':'off',
     'global-require':'off',
     'func-names':'off',
-    'indent':'off',
+    // 'indent':'off',
     'no-mixed-spaces-and-tabs':'off',
-    'no-var':'error'
+    'import/no-extraneous-dependencies': 'off',
+    'import/no-dynamic-require': 'off',
+    'import/prefer-default-export': 'off'
+    // 'no-var':'error'
   }
 }

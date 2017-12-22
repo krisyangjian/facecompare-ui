@@ -213,13 +213,13 @@ export default {
       isExpanded: false,
       fixedControl: false,
       scrollParent: null
-    }
+    };
   },
 
   props: {
     jsfiddle: Object,
     default () {
-      return {}
+      return {};
     }
   },
 
@@ -267,56 +267,56 @@ export default {
       // this.$refs.control.style.left = this.fixedControl ? `${ left }px` : '0';
     },
     removeScrollHandler () {
-      this.scrollParent && this.scrollParent.removeEventListener('scroll', this.scrollHandler)
+      this.scrollParent && this.scrollParent.removeEventListener('scroll', this.scrollHandler);
     }
   },
   computed: {
     lang () {
-      return this.$route.path.split('/')[1]
+      return this.$route.path.split('/')[1];
     },
     langConfig () {
     },
     blockClass () {
-      return `demo-${this.lang} demo-$ {this.$router.currentRoute.path.split('/').pop() }`
+      return `demo-${this.lang} demo-$ {this.$router.currentRoute.path.split('/').pop() }`;
     },
     iconClass () {
-      return this.isExpanded ? 'el-icon-caret-top' : 'el-icon-caret-bottom'
+      return this.isExpanded ? 'el-icon-caret-top' : 'el-icon-caret-bottom';
     },
     controlText () {
-      return this.isExpanded ? '隐藏代码' : '显示代码'
+      return this.isExpanded ? '隐藏代码' : '显示代码';
     },
     codeArea () {
-      return this.$el.getElementsByClassName('meta')[0]
+      return this.$el.getElementsByClassName('meta')[0];
     },
     codeAreaHeight () {
       if (this.$el.getElementsByClassName('description').length > 0) {
         return this.$el.getElementsByClassName('description')[0].clientHeight +
-          this.$el.getElementsByClassName('highlight')[0].clientHeight + 20
+          this.$el.getElementsByClassName('highlight')[0].clientHeight + 20;
       }
-      return this.$el.getElementsByClassName('highlight')[0].clientHeight
+      return this.$el.getElementsByClassName('highlight')[0].clientHeight;
     }
   },
   watch: {
     isExpanded (val) {
-      this.codeArea.style.height = val ? `${ this.codeAreaHeight + 1 }px` : '0'
+      this.codeArea.style.height = val ? `${this.codeAreaHeight + 1}px` : '0';
       if (!val) {
-        this.fixedControl = false
-        this.$refs.control.style.left = '0'
+        this.fixedControl = false;
+        this.$refs.control.style.left = '0';
         // this.removeScrollHandler()
       }
     }
   },
   mounted () {
     this.$nextTick(() => {
-      let highlight = this.$el.getElementsByClassName('highlight')[0]
+      const highlight = this.$el.getElementsByClassName('highlight')[0];
       if (this.$el.getElementsByClassName('description').length === 0) {
-        highlight.style.width = '100%'
-        highlight.borderRight = 'none'
+        highlight.style.width = '100%';
+        highlight.borderRight = 'none';
       }
-    })
+    });
   },
   beforeDestroy () {
-    this.removeScrollHandler()
+    this.removeScrollHandler();
   }
-}
+};
 </script>

@@ -10,29 +10,29 @@
 </template>
 
 <script>
-import comConfig from '../../../components.json'
+import comConfig from '../../../components.json';
 
 export default {
   data () {
     return {
       comConfig
-    }
+    };
   },
   computed: {
-    comInfoList: function () {
-      let list = []
-	  Object.keys(comConfig).forEach((comName, index) => {
-        let comInfo = comConfig[comName]
-        list.push(comInfo)
-      })
-      return list
+    comInfoList() {
+      const list = [];
+	  Object.keys(comConfig).forEach((comName) => {
+        const comInfo = comConfig[comName];
+        list.push(comInfo);
+      });
+      return list;
     }
   },
   components: {
   },
   methods: {
   }
-}
+};
 </script>
 
 <style>

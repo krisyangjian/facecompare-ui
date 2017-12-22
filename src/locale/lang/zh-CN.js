@@ -4,4 +4,4 @@ export default {
       text: '自定义组件测试'
     }
   }
-}
+};
