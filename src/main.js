@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App';
-import { router } from './utils/router.utils';
+import router from './utils/router.utils';
 import ElementUI from 'element-ui';
 import InsightUI from './index.js';
 import VueI18n from 'vue-i18n';
@@ -18,12 +18,12 @@ Vue.use(VueI18n);
 Vue.locale('zh-CN', Object.assign({}, elZhElementUI, elZhInsightUI));
 // 设置默认语言
 Vue.config.lang = 'zh-CN';
-
+// console.log(router)
 new Vue({
   el: '#app',
   router,
-  template: '<App/>',
   components: {
-	App
-  }
+    App
+  },
+  template: '<App/>'
 });
