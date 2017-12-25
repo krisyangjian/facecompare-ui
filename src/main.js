@@ -16,9 +16,9 @@ import './theme-chalk/src/index.scss';
 Vue.use(ElementUI);
 // 注册自定义组件
 Vue.use(InsightUI);
+
 // 注册多语言
 Vue.use(VueI18n);
-
 // 注册默认语言包
 Vue.locale('zh-CN', Object.assign({}, elZhElementUI, elZhInsightUI, pageLang['zh-CN']));
 // 设置默认语言
