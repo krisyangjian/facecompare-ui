@@ -47,6 +47,7 @@ export default {
   },
   methods: {
     changeTheme(command) {
+      // todo 开发环境下的主题切换
       if (command !== Vue.config.theme) {
         const cssLink = document.getElementById('theme-style');
         cssLink.href = `static/css/theme-${command}/index.css`;
