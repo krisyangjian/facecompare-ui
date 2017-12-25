@@ -1,5 +1,6 @@
 <template>
   <div class="header-wrap">
+    <div class="head-title">{{ $t('head.title') }}</div>
     <div class="theme-switch">
       <el-dropdown
         :show-timeout="0"
@@ -7,7 +8,7 @@
         trigger="click"
         @command="changeTheme">
         <span class="el-dropdown-link">
-          主题选择 {{ theme }}<i class="el-icon-arrow-down el-icon--right"></i>
+          {{ $t('head.theme-switch') }} {{ theme }}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="chalk">chalk</el-dropdown-item>
@@ -22,7 +23,7 @@
         trigger="click"
         @command="changeLocale">
         <span class="el-dropdown-link">
-          语言选择 {{ lang }}<i class="el-icon-arrow-down el-icon--right"></i>
+          {{ $t('head.lang-switch') }} {{ lang }}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="zh-CN">zh-CN</el-dropdown-item>
@@ -57,7 +58,8 @@ export default {
       require.ensure([], (require) => {
         const localPackageIS = require(`../../locale/lang/${locale}`);
         const localPackageEL = require(`element-ui/lib/locale/lang/${locale}`);
-        Vue.locale(locale, Object.assign({}, localPackageEL.default, localPackageIS.default));
+        const localePage = require('../../locale/page-lang');
+        Vue.locale(locale, Object.assign({}, localPackageEL.default, localPackageIS.default, localePage.default[locale]));
         Vue.config.lang = locale;
       }, 'locale');
     }
@@ -73,6 +75,13 @@ export default {
   height: 50px;
   width: 100%;
   background-color: $--color-primary;
+}
+.head-title {
+  color: #ffffff;
+  font-size: 22px;
+  position: absolute;
+  top: 15px;
+  left: 30px;
 }
 .theme-switch {
   position: absolute;
