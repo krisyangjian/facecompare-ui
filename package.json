@@ -8,7 +8,7 @@
     "build:file": "node build/build-entry.js",
     "build:theme": "node build/gen-cssfile && gulp build --gulpfile src/theme-test/gulpfile.js && cp-cli src/theme-test/dist dist/lib/theme-test",
     "dev": "npm run build:file && node build/dev-server.js",
-    "build": "npm run build:file && node build/build.js && npm run build:theme",
+    "build": "npm run build:file && node build/build.js",
     "deploy": "node build/deploy.js"
   },
   "dependencies": {

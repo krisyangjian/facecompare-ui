@@ -33,8 +33,8 @@ module.exports = merge(baseWebpackConfig, {
       inject: false
     }),
     new FriendlyErrorsPlugin(),
-    new ExtractTextPlugin({
-      filename: utils.assetsPath('sss.css')
-    })
+    // new ExtractTextPlugin({
+    //   filename: utils.assetsPath('sss.css')
+    // })
   ]
 })

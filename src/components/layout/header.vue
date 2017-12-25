@@ -23,7 +23,7 @@
         trigger="click"
         @command="changeLocale">
         <span class="el-dropdown-link">
-          {{ $t('head.lang-switch') }} {{ lang }}<i class="el-icon-arrow-down el-icon--right"></i>
+         {{ $t('head.lang-switch') }} {{ lang }}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="zh-CN">zh-CN</el-dropdown-item>
@@ -37,12 +37,10 @@
 import Vue from 'vue';
 
 export default {
-  computed: {
-    lang() {
-      return Vue.config.lang || 'zh-CN';
-    },
-    theme() {
-      return Vue.config.theme || 'chalk';
+  data() {
+    return {
+      theme: Vue.config.theme,
+      lang: Vue.config.lang
     }
   },
   methods: {
@@ -52,9 +50,11 @@ export default {
         const cssLink = document.getElementById('theme-style');
         cssLink.href = `static/css/theme-${command}/index.css`;
         Vue.config.theme = command;
+        this.theme = command;
       }
     },
     changeLocale(command) {
+      // Vue.config.lang = 'en';
       const locale = command || 'zh-CN';
       require.ensure([], (require) => {
         const localPackageIS = require(`../../locale/lang/${locale}`);
@@ -62,6 +62,7 @@ export default {
         const localePage = require('../../locale/page-lang');
         Vue.locale(locale, Object.assign({}, localPackageEL.default, localPackageIS.default, localePage.default[locale]));
         Vue.config.lang = locale;
+        this.lang = locale;
       }, 'locale');
     }
   }
