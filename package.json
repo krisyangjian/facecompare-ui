@@ -9,7 +9,7 @@
     "build:theme": "node build/gen-cssfile && gulp build --gulpfile src/theme-chalk/gulpfile.js && cp-cli src/theme-chalk/dist dist/theme-chalk",
     "dev": "npm run build:file && node build/dev-server.js",
     "build": "npm run build:file && node build/build.js && npm run build:theme",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
     "element-ui": "^2.0.8",

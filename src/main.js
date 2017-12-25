@@ -18,7 +18,10 @@ Vue.use(VueI18n)
 Vue.locale('zh-CN', Object.assign({}, elZhElementUI, elZhInsightUI))
 // 设置默认语言
 Vue.config.lang = 'zh-CN'
+const someStack = [];
 
+// bad
+someStack[someStack.length] = 'abracadabra';
 new Vue({
   el: '#app',
   router,

@@ -38,7 +38,6 @@ const registerRoute = (config) => {
 	})
 	return route
 }
-
 let route = registerRoute(comConfig)
 let router = new Router({
 	routes: route
