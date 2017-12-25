@@ -25,7 +25,7 @@ Vue.locale('zh-CN', Object.assign({}, elZhElementUI, elZhInsightUI, pageLang['zh
 Vue.config.lang = 'zh-CN';
 // 这是默认的配色主题
 Vue.config.theme = 'chalk';
-
+let a = 1;{
 new Vue({ // eslint-disable-line
   el: '#app',
   router,
