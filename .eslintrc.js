@@ -26,6 +26,6 @@ module.exports = {
     'no-new': 'off',
     'max-len': 'off',
     'import/no-dynamic-require': 'off',
-    'no-debugger': process.env.NODE_ENV === 'development' : '0' : '2'
+    'no-debugger': process.env.NODE_ENV === 'development'? 0 : 2
   }
 }
