@@ -26,9 +26,7 @@ Vue.config.lang = 'zh-CN';
 // 这是默认的配色主题
 Vue.config.theme = 'chalk';
 
-// bad
-someStack[someStack.length] = 'abracadabra';
-new Vue({
+new Vue({ // eslint-disable-line
   el: '#app',
   router,
   components: {

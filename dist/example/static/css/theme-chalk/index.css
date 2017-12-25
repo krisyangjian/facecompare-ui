@@ -43600,6 +43600,13 @@ to {
   width: 100%;
   background-color: #409EFF;
 }
+.head-title[data-v-30de9f9c] {
+  color: #ffffff;
+  font-size: 22px;
+  position: absolute;
+  top: 15px;
+  left: 30px;
+}
 .theme-switch[data-v-30de9f9c] {
   position: absolute;
   right: 180px;
