@@ -2,6 +2,7 @@
 
 import Button from './components/packages/button/index.js';
 import Test from './components/packages/test/index.js';
+import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import locale from './locale/lang/zh-CN';
 Vue.use(VueI18n);
