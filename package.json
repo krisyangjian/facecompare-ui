@@ -4,6 +4,9 @@
   "description": "facecompare-ui",
   "author": "yangjian <krisyangjian@163.com>",
   "main": "dist/insight-ui.common.js",
+  "files": [
+    "dist/lib"
+  ],
   "scripts": {
     "build:file": "node build/build-entry.js",
     "build:theme": "node build/gen-cssfile && gulp build --gulpfile src/theme-test/gulpfile.js && cp-cli src/theme-test/dist dist/lib/theme-test",
