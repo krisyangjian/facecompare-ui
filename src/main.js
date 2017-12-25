@@ -7,18 +7,23 @@ import VueI18n from 'vue-i18n';
 import elZhElementUI from 'element-ui/lib/locale/lang/zh-CN';
 import elZhInsightUI from './locale/lang/zh-CN';
 
-import 'element-ui/lib/theme-chalk/index.css';
+// import 'element-ui/packages/theme-chalk/src/index.scss';
 import './theme-chalk/src/index.scss';
 
+// 注册element组件
 Vue.use(ElementUI);
+// 注册自定义组件
 Vue.use(InsightUI);
+// 注册多语言
 Vue.use(VueI18n);
 
 // 注册默认语言包
 Vue.locale('zh-CN', Object.assign({}, elZhElementUI, elZhInsightUI));
 // 设置默认语言
 Vue.config.lang = 'zh-CN';
-// console.log(router)
+// 这是默认的配色主题
+Vue.config.theme = 'chalk';
+
 new Vue({
   el: '#app',
   router,

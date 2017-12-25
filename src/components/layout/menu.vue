@@ -45,16 +45,16 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../../theme-chalk/src/common/var.scss";
     .menu-wrap {
         float: left;
         height: 100%;
         width: 200px;
-        background-color: rgb(93, 102, 116);
+        background-color: $--color-primary;
     }
     .nav-item {
       text-align: left;
-      /* padding-left: 20px; */
     }
     .nav-item a {
       display: block;
@@ -66,10 +66,6 @@ export default {
       overflow: hidden;
     }
     .menu-content li {
-        /* padding: 10px 15px; */
-        /* height: 50px;
-        line-height: 50px;
-        text-decoration: none; */
         font-size: 14px;
         font-weight: 300;
         cursor: pointer;

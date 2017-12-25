@@ -13,18 +13,15 @@ const env = config.deploy.env
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
-      rules: utils.styleLoaders({
-          extract: true,
-          usePostCSS: true
-      })
+    rules: utils.styleLoaders({
+      extract: true,
+      usePostCSS: true
+    })
   },
   output: {
     path: config.deploy.assetsRoot,
-    filename: '[name].[chunkhash:7].js',
-    chunkFilename: '[id].[chunkhash:7].js'
-    // publicPath: process.env.NODE_ENV === 'production'
-    //   ? config.build.assetsPublicPath
-    //   : config.dev.assetsPublicPath
+    filename: utils.assetsPath('js/[name].[chunkhash:7].js'),
+    chunkFilename: utils.assetsPath('js/[id].[chunkhash].js')
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -45,7 +42,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         // chunksSortMode: 'dependency'
     }),
     new ExtractTextPlugin({
-        filename: '[name].[chunkhash:7].css',
+        filename: utils.assetsPath('css/theme-chalk/index.css'),
         // Setting the following option to `false` will not extract CSS from codesplit chunks.
         // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
         // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 

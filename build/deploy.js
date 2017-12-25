@@ -12,12 +12,12 @@ const config = require('../config')
 const webpackConfig = require('./webpack.deploy.conf')
 
 const spinner = ora('deploying for production...')
-spinner.start()
+// spinner.start()
 
-rm(config.deploy.assetsRoot, err => {
+rm(path.join(config.deploy.assetsRoot, config.deploy.assetsSubDirectory), err => {
   if (err) throw err
   webpack(webpackConfig, function (err, stats) {
-    spinner.stop()
+    // spinner.stop()
     if (err) throw err
     process.stdout.write(stats.toString({
       colors: true,

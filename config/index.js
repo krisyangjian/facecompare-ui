@@ -8,7 +8,8 @@ const path = require('path')
 module.exports = {
   deploy: {
     env: require('./deploy.env'),
-    assetsRoot: path.resolve(__dirname, '../example')
+    assetsRoot: path.resolve(__dirname, '../dist/example'),
+    assetsSubDirectory: 'static/js'
   },
   build: {
     env: require('./prod.env'),

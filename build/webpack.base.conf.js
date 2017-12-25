@@ -6,6 +6,7 @@ const vueLoaderConfig = require('./vue-loader.conf')
 var striptags = require('./strip-tags');
 var slugify = require('transliteration').slugify;
 var md = require('markdown-it')();
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 var wrap = function(render) {
   return function() {
@@ -57,7 +58,7 @@ module.exports = {
   },
   module: {
     rules: [
-      // ...(config.dev.useEslint ? [createLintingRule()] : []),
+      ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -146,5 +147,8 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new ProgressBarPlugin()
+  ]
 }

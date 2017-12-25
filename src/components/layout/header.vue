@@ -1,13 +1,17 @@
 <template>
   <div class="header-wrap">
     <div class="theme-switch">
-      <el-dropdown trigger="click">
+      <el-dropdown
+        :show-timeout="0"
+        :hide-timeout="0"
+        trigger="click"
+        @command="changeTheme">
         <span class="el-dropdown-link">
-          主题选择<i class="el-icon-arrow-down el-icon--right"></i>
+          主题选择 {{ theme }}<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item command="chalk">chalk</el-dropdown-item>
-          <el-dropdown-item command="other">other</el-dropdown-item>
+          <el-dropdown-item command="test">other</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
     </div>
@@ -35,11 +39,19 @@ export default {
   computed: {
     lang() {
       return Vue.config.lang || 'zh-CN';
+    },
+    theme() {
+      return Vue.config.theme || 'chalk';
     }
   },
   methods: {
-    // changeTheme(command) {
-    // },
+    changeTheme(command) {
+      if (command !== Vue.config.theme) {
+        const cssLink = document.getElementById('theme-style');
+        cssLink.href = `static/css/theme-${command}/index.css`;
+        Vue.config.theme = command;
+      }
+    },
     changeLocale(command) {
       const locale = command || 'zh-CN';
       require.ensure([], (require) => {
@@ -53,12 +65,14 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "../../theme-chalk/src/common/var.scss";
+
 .header-wrap {
   position: relative;
   height: 50px;
   width: 100%;
-  background-color: #2D5F8B;
+  background-color: $--color-primary;
 }
 .theme-switch {
   position: absolute;
