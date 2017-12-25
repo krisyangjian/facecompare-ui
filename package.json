@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "facecompare-ui",
   "author": "yangjian <krisyangjian@163.com>",
-  "main": "dist/insight-ui.common.js",
+  "main": "dist/lib/insight-ui.common.js",
   "files": [
     "dist/lib"
   ],
