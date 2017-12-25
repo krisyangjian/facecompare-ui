@@ -1,17 +1,4 @@
 {
-    "button": {
-        "packagePath": "./button/index.js",
-        "routePath": "/button",
-        "title": "Button 按钮"
-    },
-    "table": {
-        "packagePath": "./table/index.js",
-        "routePath": "/table",
-        "title": "Table 表格"
-    },
-    "test": {
-        "packagePath": "./test/index.js",
-        "routePath": "/test",
-        "title": "Test 测试组件"
-    }
+    "button": "./src/components/packages/button/index.js",
+    "test": "./src/components/packages/test/index.js"
 }

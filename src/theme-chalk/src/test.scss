@@ -1,12 +1,12 @@
 @charset "UTF-8";
-@import "common/var";
+// @import "common/var";
 
 .is-test {
     width: 200px;
     height: 50px;
     text-align: center;
-    background-color: $--test-default-fill;
-    color: #ffffff;
+    background-color: $--color-primary;
+    color: $--color-white;
     line-height: 50px;
     font-size: 14px;  
     cursor: pointer;  

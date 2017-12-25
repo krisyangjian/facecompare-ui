@@ -6,6 +6,7 @@ const vueLoaderConfig = require('./vue-loader.conf')
 var striptags = require('./strip-tags');
 var slugify = require('transliteration').slugify;
 var md = require('markdown-it')();
+var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 var wrap = function(render) {
   return function() {
@@ -30,7 +31,7 @@ const createLintingRule = () => ({
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
+  include: [resolve('src')],
   options: {
     formatter: require('eslint-friendly-formatter'),
     emitWarning: !config.dev.showEslintErrorsInOverlay
@@ -43,10 +44,10 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    filename: '[name].js'
+    // publicPath: process.env.NODE_ENV === 'production'
+    //   ? config.build.assetsPublicPath
+    //   : config.dev.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -66,7 +67,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test')]
+        include: [resolve('src')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -89,7 +90,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          name: '[name].[hash:7].[ext]'
         }
       },
       {
@@ -146,5 +147,8 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new ProgressBarPlugin()
+  ]
 }

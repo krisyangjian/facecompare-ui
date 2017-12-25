@@ -4,11 +4,15 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
   		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-		<title></title>
-		<style>
-		</style>
+		<title>UI组件库</title>
+		<% for (var css in htmlWebpackPlugin.files.css) { %>
+    		<link id="theme-style" href="<%=htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
+    	<% } %>
 	</head>
 	<body>
 		<div id="app"></div>
+		<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+			<script type="text/javascript" src="<%=htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+		<% } %>
 	</body>
 </html>

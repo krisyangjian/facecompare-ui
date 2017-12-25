@@ -1,11 +1,7 @@
-/* Chalk Variables */
+/* 改变主题色变量 */
+// $--color-primary: blue;
 
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
 
-/* Colors
--------------------------- */
-$--color-blue: blue !default;
-
-
-/* Test
--------------------------- */
-$--test-default-fill: $--color-blue !default;
+@import "~element-ui/packages/theme-chalk/src/index";

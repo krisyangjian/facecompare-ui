@@ -1,12 +1,11 @@
 <template>
-	<div>
-        	sadasdasd
-	</div>
+  <div>
+    button component
+  </div>
 </template>
+
 <script>
 export default {
   name: 'IsButton'
-}
+};
 </script>
-<style>
-</style>

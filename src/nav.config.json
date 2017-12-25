@@ -1,0 +1,24 @@
+{
+  "zh-CN": [
+    {
+      "name": "组件",
+      "groups": [
+        {
+          "groupName": "Basic",
+          "list": [
+            {
+              "name": "button",
+              "path": "/button",
+              "title": "Button 按钮"
+            },
+            {
+              "name": "test",
+              "path": "/test",
+              "title": "Test 测试组件"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
