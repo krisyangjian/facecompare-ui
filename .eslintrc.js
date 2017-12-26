@@ -8,7 +8,7 @@ module.exports = {
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: [
     'airbnb-base',
-    // 'plugin:vue/recommended'
+    'plugin:vue/recommended'
   ],
   //required to lint *.vue files
   // plugins: [
