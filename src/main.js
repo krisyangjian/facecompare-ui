@@ -16,7 +16,7 @@ import './theme-chalk/src/index.scss';
 Vue.use(ElementUI);
 // 注册自定义组件
 Vue.use(InsightUI);
-
+var a =1;
 // 注册多语言
 Vue.use(VueI18n);
 // 注册默认语言包
