@@ -13,7 +13,7 @@
     "dev": "npm run build:file && node build/dev-server.js",
     "build": "npm run build:file && node build/build.js",
     "deploy": "node build/deploy.js",
-    "lint": "git diff-tree --no-commit-id --name-only -r $REVISION | xargs pre-commit run --files."
+    "lint": "eslint ./src/"
   },
   "pre-commit": [
       "lint"
